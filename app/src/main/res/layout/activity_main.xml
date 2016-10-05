@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.projava.coffeefinal.MainActivity">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etName"
+        android:inputType="text"
+        android:hint="Name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TOPPINGS"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/etName"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:id="@+id/toppings"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ckCream"
+        android:text="Whipped cream"
+        android:layout_below="@+id/toppings"
+       />
+
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ckChocolate"
+        android:text="Chocolate"
+        android:layout_below="@+id/ckCream"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QUANTITY"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/tvQuantity"
+        android:layout_below="@+id/ckChocolate"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvCount"
+        android:text="0"
+        android:layout_below="@+id/tvQuantity"
+        android:layout_toRightOf="@+id/btnSubtract"
+        android:paddingTop="16dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="+"
+        android:id="@+id/btnAdd"
+        android:layout_below="@id/tvQuantity"
+        android:layout_toRightOf="@id/tvCount"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:onClick="onOrder"/>
+
+    <Button
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="-"
+        android:id="@+id/btnSubtract"
+        android:layout_below="@+id/tvQuantity"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:onClick="onOrder"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:layout_below="@id/btnSubtract"
+        android:id="@+id/tvPrice"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$0"
+        android:layout_below="@id/tvPrice"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:id="@+id/tvAmnt"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thank You!"
+        android:layout_below="@id/tvAmnt"
+        android:id="@+id/tvThank"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="gone"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvThank"
+        android:id="@+id/tvCream"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:text="Cream is set to true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCream"
+        android:id="@+id/tvChocolate"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="gone"
+        android:text="Chocolate is set to true"
+        android:textStyle="bold"
+        />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order"
+        android:id="@+id/btnOrder"
+        android:layout_below="@id/tvChocolate"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:onClick="order"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ORDER"
+        android:id="@+id/tvResult"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="false"
+        android:visibility="invisible"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:id="@+id/views"
+        android:layout_above="@+id/tvResult"
+        android:background="@color/colorBlack"
+        android:visibility="invisible"
+        />
+
+</RelativeLayout>
+</ScrollView>
